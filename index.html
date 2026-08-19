@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlanT</title>
+<style>
+  :root{
+    --ivory:#FAF6EE; --surface:#FFFFFF; --text:#2E2A22;
+    --sub:#7D7566; --line:#E5DDCC; --green:#5B8C6A; --brown:#A07E5A;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; min-height:100vh; background:var(--ivory); color:var(--text);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",
+         "Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .wrap{max-width:460px; width:100%; padding:48px 24px; text-align:center}
+  .pot{margin-bottom:22px}
+  h1{font-size:34px; margin:0 0 6px; letter-spacing:-.02em}
+  .tag{color:var(--sub); margin:0 0 40px; font-size:15px}
+  .links{display:flex; flex-direction:column; gap:10px}
+  .links a{
+    display:block; padding:16px 20px; text-decoration:none;
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:14px; color:var(--text); font-size:16px;
+    transition:border-color .15s;
+  }
+  .links a:hover{border-color:var(--green)}
+  .links a span{display:block; color:var(--sub); font-size:13px; margin-top:2px}
+  footer{margin-top:44px; color:var(--sub); font-size:13px; line-height:1.9}
+  footer a{color:var(--green)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <svg class="pot" width="84" height="84" viewBox="0 0 84 84" fill="none" aria-hidden="true">
+    <!-- 잎 -->
+    <path d="M42 44c0-8-5-14-12-16 1 8 5 14 12 16z" fill="#7FB069"/>
+    <path d="M42 40c0-7 5-12 11-14-1 7-4 12-11 14z" fill="#A8C99A"/>
+    <!-- 줄기 -->
+    <rect x="40.6" y="38" width="2.8" height="16" rx="1.4" fill="#5B8C6A"/>
+    <!-- 화분 -->
+    <path d="M22 54h40l-5 22a3 3 0 0 1-3 2.4H30a3 3 0 0 1-3-2.4L22 54z" fill="#A07E5A"/>
+    <rect x="19" y="49" width="46" height="7" rx="2.4" fill="#8B6F4E"/>
+  </svg>
+
+  <h1>PlanT</h1>
+  <p class="tag">A record of your body's seasons</p>
+
+  <div class="links">
+    <a href="./privacy.html">
+      Privacy Policy
+      <span>개인정보처리방침</span>
+    </a>
+    <a href="./terms.html">
+      Terms of Service
+      <span>이용약관</span>
+    </a>
+  </div>
+
+  <footer>
+    Questions · 문의<br>
+    <a href="mailto:sangwon070831@gmail.com">sangwon070831@gmail.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

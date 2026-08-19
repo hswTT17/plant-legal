@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — PlanT</title>
+<style>
+  :root{
+    --ivory:#FAF6EE; --surface:#FFFFFF; --text:#2E2A22;
+    --sub:#7D7566; --line:#E5DDCC; --green:#5B8C6A;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--ivory); color:var(--text);
+    font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",
+         "Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:40px 20px 80px}
+  header{border-bottom:1px solid var(--line); padding-bottom:24px; margin-bottom:32px}
+  h1{font-size:28px; margin:0 0 8px; letter-spacing:-.01em}
+  .meta{color:var(--sub); font-size:14px; margin:0}
+  .langbar{display:flex; gap:8px; margin-bottom:28px}
+  .langbar button{
+    font:inherit; font-size:14px; padding:7px 16px; cursor:pointer;
+    border:1px solid var(--line); background:var(--surface);
+    color:var(--sub); border-radius:999px;
+  }
+  .langbar button[aria-pressed="true"]{
+    background:var(--green); border-color:var(--green); color:#fff;
+  }
+  h2{font-size:19px; margin:36px 0 10px; letter-spacing:-.01em}
+  h3{font-size:16px; margin:22px 0 6px}
+  p,li{color:var(--text)}
+  ul{padding-left:20px}
+  li{margin:5px 0}
+  .card{
+    background:var(--surface); border:1px solid var(--line);
+    border-radius:14px; padding:18px 20px; margin:20px 0;
+  }
+  .card p:first-child{margin-top:0}
+  .card p:last-child{margin-bottom:0}
+  table{width:100%; border-collapse:collapse; margin:14px 0; font-size:15px}
+  th,td{border-bottom:1px solid var(--line); padding:9px 8px; text-align:left; vertical-align:top}
+  th{color:var(--sub); font-weight:600; white-space:nowrap}
+  a{color:var(--green)}
+  footer{margin-top:56px; padding-top:20px; border-top:1px solid var(--line);
+         color:var(--sub); font-size:14px}
+  [hidden]{display:none !important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="langbar">
+  <button id="btn-en" aria-pressed="true"  onclick="setLang('en')">English</button>
+  <button id="btn-ko" aria-pressed="false" onclick="setLang('ko')">한국어</button>
+</div>
+
+<!-- ============================ ENGLISH ============================ -->
+<section id="en">
+<header>
+  <h1>Privacy Policy</h1>
+  <p class="meta">PlanT · Last updated: 19 August 2026</p>
+</header>
+
+<div class="card">
+  <p><strong>The short version.</strong> PlanT stores everything on your phone.
+  Your cycle records, symptoms, journal entries, and temperature readings never
+  leave your device. The app does not have permission to access the internet, so
+  it cannot send your health data anywhere — even by mistake.</p>
+</div>
+
+<h2>1. Who we are</h2>
+<p>PlanT is developed by an individual developer.</p>
+<table>
+  <tr><th>Developer</th><td>Sangwon Han (한상원)</td></tr>
+  <tr><th>Contact</th><td><a href="mailto:sangwon070831@gmail.com">sangwon070831@gmail.com</a></td></tr>
+  <tr><th>Application</th><td>PlanT (<code>com.plant.app</code>)</td></tr>
+</table>
+<p>For the purposes of applicable data protection law, the developer named above
+is the data controller for any information you choose to provide.</p>
+
+<h2>2. What the app handles</h2>
+<p>PlanT is a menstrual cycle tracking app. Depending on what you choose to
+record, it may hold the following on your device:</p>
+<table>
+  <tr><th>Category</th><th>Examples</th></tr>
+  <tr><td>Cycle</td><td>Period start and end dates, flow level, ovulation dates</td></tr>
+  <tr><td>Symptoms</td><td>Mood, physical symptoms, digestion, appetite, activity, cervical mucus</td></tr>
+  <tr><td>Body</td><td>Basal body temperature</td></tr>
+  <tr><td>Journal</td><td>Free-text notes you write</td></tr>
+  <tr><td>Medication</td><td>Birth control method, pill intake logs, supplements</td></tr>
+  <tr><td>Health background</td><td>Conditions you select during onboarding (for example PCOS)</td></tr>
+  <tr><td>Profile</td><td>Display name, date of birth, language, unit preferences</td></tr>
+</table>
+<p>All of this is optional. The app works with whatever you decide to enter, and
+nothing is required beyond a last period date if you want predictions.</p>
+
+<h2>3. Where your data lives</h2>
+<p>On your phone, in a local database, and nowhere else.</p>
+<ul>
+  <li><strong>No servers.</strong> We do not operate a backend that receives your health data.</li>
+  <li><strong>No internet permission.</strong> The released Android app does not declare
+      <code>android.permission.INTERNET</code>. This is a technical guarantee, not just a promise —
+      the operating system will not allow the app to open a network connection.</li>
+  <li><strong>No analytics, no advertising, no tracking SDKs.</strong></li>
+  <li><strong>Predictions are calculated on your device.</strong> Cycle length, ovulation
+      estimates and fertile windows are computed locally.</li>
+  <li><strong>Notifications are generated on your device.</strong> No push service is involved.</li>
+</ul>
+
+<h2>4. Backups are deliberately turned off</h2>
+<p>Android normally copies app data to your Google account automatically. We have
+disabled this for PlanT (<code>allowBackup="false"</code>) so that your health
+records are not uploaded to Google's servers without you asking.</p>
+<div class="card">
+  <p><strong>What this means for you:</strong> if you change phones, uninstall the
+  app, or clear its data, your records are gone. There is no copy anywhere else
+  for us to restore. Use <em>Settings → My data → Export</em> before you switch
+  devices.</p>
+</div>
+
+<h2>5. Third parties</h2>
+<h3>5.1 Google Play (subscriptions)</h3>
+<p>If you subscribe to a paid plan, the purchase is processed by Google Play.
+We never see or store your payment details. Google's handling of that
+transaction is governed by
+<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+We receive only whether an active subscription exists.</p>
+
+<h3>5.2 Subscription management service</h3>
+<p>To determine subscription status we may use a purchase-management service
+(RevenueCat). It processes an anonymous identifier and purchase receipts. It does
+not receive any of your health records — those never leave your device and are
+therefore not available to any third party.</p>
+
+<h3>5.3 No one else</h3>
+<p>We do not sell, rent, trade, or share your information with anyone. There is
+no data broker relationship, no advertising partner, and no research partnership
+involving your records.</p>
+
+<h2>6. Your rights and controls</h2>
+<table>
+  <tr><th>Export</th><td>Settings → My data → Export. Produces a JSON archive and a CSV table you can keep or take to a clinician.</td></tr>
+  <tr><th>Delete</th><td>Settings → My data → Delete account. Erases the local database. Uninstalling the app has the same effect.</td></tr>
+  <tr><th>Correct</th><td>Any record can be edited or removed from within the app.</td></tr>
+  <tr><th>Restrict</th><td>Simply do not enter data you do not want stored. Every field is optional.</td></tr>
+</table>
+<p>Because we hold no copy of your data, we cannot retrieve, correct, or delete
+it on your behalf — but equally, we cannot disclose it to anyone, including
+authorities, because we do not have it.</p>
+
+<h2>7. Notifications</h2>
+<p>If you allow notifications, PlanT schedules reminders locally on your device
+(for example, an upcoming period or a birth control reminder). Notification
+content is generated on the phone. No notification data is transmitted.</p>
+
+<h2>8. Children</h2>
+<p>PlanT is not directed at children under 13, and we do not knowingly collect
+information from them. Because the app stores nothing remotely, we have no means
+of identifying the age of any user. If you are a minor, please use the app with
+the involvement of a parent or guardian where that is appropriate for you.</p>
+
+<h2>9. Security</h2>
+<p>Your data is protected by your device's own security — screen lock, disk
+encryption, and Android's application sandbox, which prevents other apps from
+reading PlanT's database. Keeping your device locked and updated is the most
+effective protection. We cannot secure a device that is unlocked and handed to
+someone else.</p>
+
+<h2>10. This is not medical advice</h2>
+<p>PlanT provides estimates based on the dates you enter. It is not a medical
+device, not a diagnostic tool, and <strong>must not be used as a method of
+contraception</strong>. Predictions can be wrong, particularly if your cycles are
+irregular. Consult a qualified healthcare professional for medical decisions.</p>
+
+<h2>11. Changes to this policy</h2>
+<p>If this policy changes materially, the updated version will be published at
+this address with a new date at the top. Continued use of the app after an
+update constitutes acceptance of the revised policy.</p>
+
+<h2>12. Contact</h2>
+<p>Questions, concerns, or requests:
+<a href="mailto:sangwon070831@gmail.com">sangwon070831@gmail.com</a></p>
+</section>
+
+<!-- ============================ 한국어 ============================ -->
+<section id="ko" hidden>
+<header>
+  <h1>개인정보처리방침</h1>
+  <p class="meta">PlanT · 최종 수정일: 2026년 8월 19일</p>
+</header>
+
+<div class="card">
+  <p><strong>짧게 요약하면.</strong> PlanT는 모든 기록을 사용자의 휴대폰 안에만
+  저장합니다. 주기 기록, 증상, 일기, 체온은 기기를 떠나지 않습니다. 앱에는
+  인터넷 접근 권한 자체가 없어서, 실수로라도 건강 정보를 외부로 보낼 수
+  없습니다.</p>
+</div>
+
+<h2>1. 사업자 정보</h2>
+<p>PlanT는 개인 개발자가 만들고 운영합니다.</p>
+<table>
+  <tr><th>개발자</th><td>한상원</td></tr>
+  <tr><th>개인정보 보호책임자</th><td>한상원</td></tr>
+  <tr><th>연락처</th><td><a href="mailto:sangwon070831@gmail.com">sangwon070831@gmail.com</a></td></tr>
+  <tr><th>애플리케이션</th><td>PlanT (<code>com.plant.app</code>)</td></tr>
+</table>
+
+<h2>2. 앱이 다루는 정보</h2>
+<p>PlanT는 월경 주기 기록 앱입니다. 사용자가 입력하기로 선택한 범위에서
+다음 정보가 기기에 저장될 수 있습니다.</p>
+<table>
+  <tr><th>구분</th><th>예시</th></tr>
+  <tr><td>주기</td><td>생리 시작·종료일, 생리량, 배란일</td></tr>
+  <tr><td>증상</td><td>감정, 신체 증상, 소화, 식욕, 활동, 분비물</td></tr>
+  <tr><td>신체</td><td>기초체온</td></tr>
+  <tr><td>일기</td><td>사용자가 직접 작성한 글</td></tr>
+  <tr><td>복약</td><td>피임 방법, 복용 기록, 영양제</td></tr>
+  <tr><td>건강 배경</td><td>온보딩에서 선택한 상태(예: 다낭성난소증후군)</td></tr>
+  <tr><td>프로필</td><td>표시 이름, 생년월일, 언어, 단위 설정</td></tr>
+</table>
+<p>모든 항목은 선택입니다. 예측 기능을 쓰려면 마지막 생리 시작일이 필요하지만,
+그 밖에 반드시 입력해야 하는 정보는 없습니다.</p>
+
+<h2>3. 정보가 저장되는 곳</h2>
+<p>사용자의 휴대폰 안, 로컬 데이터베이스. 그 외 어디에도 없습니다.</p>
+<ul>
+  <li><strong>서버가 없습니다.</strong> 건강 정보를 수신하는 서버를 운영하지 않습니다.</li>
+  <li><strong>인터넷 권한이 없습니다.</strong> 배포되는 안드로이드 앱은
+      <code>android.permission.INTERNET</code>을 선언하지 않습니다. 약속이 아니라
+      기술적 보장입니다 — 운영체제가 이 앱의 네트워크 연결 자체를 허용하지 않습니다.</li>
+  <li><strong>분석 도구, 광고, 추적 SDK를 넣지 않았습니다.</strong></li>
+  <li><strong>예측은 기기 안에서 계산합니다.</strong> 주기 길이, 배란 예상,
+      가임기 계산이 모두 로컬에서 이뤄집니다.</li>
+  <li><strong>알림도 기기가 직접 만듭니다.</strong> 푸시 서버를 거치지 않습니다.</li>
+</ul>
+
+<h2>4. 자동 백업을 의도적으로 껐습니다</h2>
+<p>안드로이드는 보통 앱 데이터를 사용자의 구글 계정으로 자동 복사합니다.
+PlanT는 이 기능을 껐습니다(<code>allowBackup="false"</code>). 건강 기록이
+사용자가 요청하지도 않았는데 구글 서버로 올라가는 일을 막기 위해서입니다.</p>
+<div class="card">
+  <p><strong>대신 이런 점에 유의하세요.</strong> 휴대폰을 바꾸거나, 앱을 삭제하거나,
+  앱 데이터를 지우면 기록이 사라집니다. 다른 곳에 사본이 없으므로 복구해
+  드릴 수 없습니다. 기기를 바꾸기 전에
+  <em>설정 → 내 데이터 → 내보내기</em>를 이용해 주세요.</p>
+</div>
+
+<h2>5. 제3자 제공</h2>
+<h3>5.1 구글 플레이 (구독 결제)</h3>
+<p>유료 구독을 이용하는 경우 결제는 구글 플레이가 처리합니다. 결제 수단
+정보는 개발자가 보거나 저장하지 않습니다. 해당 거래에 대한 구글의 처리는
+<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">구글 개인정보처리방침</a>을
+따릅니다. 앱은 구독이 활성 상태인지 여부만 받습니다.</p>
+
+<h3>5.2 구독 관리 서비스</h3>
+<p>구독 상태 확인을 위해 결제 관리 서비스(RevenueCat)를 이용할 수 있습니다.
+이 서비스는 익명 식별자와 결제 영수증을 처리합니다. 건강 기록은 전달되지
+않습니다 — 애초에 기기를 떠나지 않으므로 어떤 제3자도 접근할 수 없습니다.</p>
+
+<h3>5.3 그 외 제공 없음</h3>
+<p>개인정보를 판매하거나 대여하거나 교환하지 않습니다. 데이터 브로커, 광고
+파트너, 연구 제휴 어느 것도 없습니다.</p>
+
+<h2>6. 이용자의 권리</h2>
+<table>
+  <tr><th>내보내기</th><td>설정 → 내 데이터 → 내보내기. JSON 보관본과 CSV 표를 만들어 보관하거나 진료 시 활용할 수 있습니다.</td></tr>
+  <tr><th>삭제</th><td>설정 → 내 데이터 → 계정 삭제. 로컬 데이터베이스를 지웁니다. 앱을 삭제해도 같은 결과입니다.</td></tr>
+  <tr><th>정정</th><td>모든 기록은 앱 안에서 수정하거나 삭제할 수 있습니다.</td></tr>
+  <tr><th>제한</th><td>저장을 원치 않는 항목은 입력하지 않으면 됩니다. 모든 항목이 선택입니다.</td></tr>
+</table>
+<p>개발자가 사본을 보유하지 않으므로 대신 조회·정정·삭제해 드릴 수 없습니다.
+다만 같은 이유로, 수사기관을 포함한 누구에게도 제공할 수 없습니다.
+가지고 있지 않기 때문입니다.</p>
+
+<h2>7. 알림</h2>
+<p>알림을 허용하면 PlanT가 기기 안에서 알림을 예약합니다(예: 생리 예정,
+복약 알림). 알림 내용은 휴대폰이 직접 만들며, 어떤 정보도 전송되지 않습니다.</p>
+
+<h2>8. 아동</h2>
+<p>PlanT는 만 13세 미만 아동을 대상으로 하지 않으며, 해당 연령의 정보를
+의도적으로 수집하지 않습니다. 앱이 어떤 정보도 외부에 저장하지 않으므로
+이용자의 연령을 확인할 수단 자체가 없습니다. 미성년자인 경우, 필요하다면
+보호자와 함께 이용해 주세요.</p>
+
+<h2>9. 안전성 확보 조치</h2>
+<p>기록은 기기 자체의 보안으로 보호됩니다 — 화면 잠금, 디스크 암호화,
+그리고 다른 앱이 PlanT의 데이터베이스를 읽지 못하게 하는 안드로이드
+샌드박스입니다. 기기를 잠가 두고 최신 상태로 유지하는 것이 가장 효과적인
+보호입니다. 잠금이 풀린 채 타인에게 건네진 기기는 보호할 수 없습니다.</p>
+
+<h2>10. 의학적 조언이 아닙니다</h2>
+<p>PlanT는 입력된 날짜를 바탕으로 추정치를 제공합니다. 의료기기가 아니며,
+진단 도구가 아니고, <strong>피임 수단으로 사용해서는 안 됩니다</strong>.
+특히 주기가 불규칙한 경우 예측이 맞지 않을 수 있습니다. 의학적 판단이
+필요할 때는 의료 전문가와 상담하세요.</p>
+
+<h2>11. 방침 변경</h2>
+<p>본 방침이 실질적으로 변경되면 이 주소에 개정판을 게시하고 상단 날짜를
+갱신합니다. 변경 후에도 앱을 계속 이용하는 경우 개정된 방침에 동의한 것으로
+봅니다.</p>
+
+<h2>12. 문의</h2>
+<p>문의·요청:
+<a href="mailto:sangwon070831@gmail.com">sangwon070831@gmail.com</a></p>
+</section>
+
+<footer>
+  <p>PlanT · <a href="./terms.html">Terms of Service / 이용약관</a></p>
+</footer>
+
+</div>
+
+<script>
+function setLang(l){
+  document.getElementById('en').hidden = (l !== 'en');
+  document.getElementById('ko').hidden = (l !== 'ko');
+  document.getElementById('btn-en').setAttribute('aria-pressed', l === 'en');
+  document.getElementById('btn-ko').setAttribute('aria-pressed', l === 'ko');
+  document.documentElement.lang = l;
+  try{ localStorage.setItem('plant-lang', l); }catch(e){}
+}
+(function(){
+  var saved = null;
+  try{ saved = localStorage.getItem('plant-lang'); }catch(e){}
+  var l = saved || ((navigator.language||'en').toLowerCase().startsWith('ko') ? 'ko' : 'en');
+  setLang(l);
+})();
+</script>
+</body>
+</html>
