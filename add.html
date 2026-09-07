@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>PlanT</title>
+<style>
+  :root {
+    --bg: #FAF6EE;
+    --ink: #3A3630;
+    --muted: #7A7268;
+    --line: #E5DED2;
+    --green: #5C8A5C;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 "Noto Sans KR", Roboto, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main {
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+  }
+  .pot {
+    display: block;
+    margin: 0 auto 32px;
+  }
+  h1 {
+    font-size: 22px;
+    line-height: 1.45;
+    font-weight: 600;
+    margin: 0 0 12px;
+    text-align: center;
+  }
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin: 0 0 28px;
+    text-align: center;
+  }
+  .code-box {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 16px;
+    margin: 0 0 28px;
+    text-align: center;
+    background: #fff;
+  }
+  .code-label {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 8px;
+  }
+  .code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 26px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin: 0;
+    word-break: break-all;
+  }
+  a.btn {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  a.primary {
+    background: var(--green);
+    color: #fff;
+  }
+  a.secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .note {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin: 24px 0 0;
+    text-align: center;
+  }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<main>
+
+  <svg class="pot" width="96" height="96" viewBox="0 0 96 96"
+       fill="none" aria-hidden="true">
+    <path d="M48 62 V38" stroke="#5C8A5C" stroke-width="3"
+          stroke-linecap="round"/>
+    <path d="M48 46 C40 42 34 44 32 48 C38 52 44 51 48 46 Z"
+          fill="#7FA97F"/>
+    <path d="M48 54 C56 50 62 52 64 56 C58 60 52 59 48 54 Z"
+          fill="#7FA97F"/>
+    <path d="M30 62 H66 L62 82 Q62 86 58 86 H38 Q34 86 34 82 Z"
+          fill="#C98F6B"/>
+    <path d="M28 58 H68 Q70 58 70 60 V63 Q70 65 68 65 H28
+             Q26 65 26 63 V60 Q26 58 28 58 Z" fill="#B87E5C"/>
+  </svg>
+
+  <h1 id="title">친구가 PlanT로 초대했어요</h1>
+  <p id="lead">
+    PlanT는 생리주기를 화분으로 보여주는 앱이에요.<br>
+    아래 코드로 친구를 추가할 수 있어요.
+  </p>
+
+  <div class="code-box" id="codeBox">
+    <p class="code-label" id="codeLabel">초대 코드</p>
+    <p class="code" id="code">—</p>
+  </div>
+
+  <a class="btn primary" id="openBtn" href="#">앱에서 열기</a>
+  <a class="btn secondary" id="storeBtn"
+     href="https://play.google.com/store/apps/details?id=com.hswtt.plant">
+    PlanT 설치하기
+  </a>
+
+  <p class="note" id="note">
+    앱이 안 열리면 설치한 뒤에<br>
+    친구 탭에서 위 코드를 입력해 주세요.
+  </p>
+
+</main>
+
+<script>
+(function () {
+  var ko = (navigator.language || 'en').toLowerCase().indexOf('ko') === 0;
+
+  var T = ko ? {
+    title: '친구가 PlanT로 초대했어요',
+    lead: 'PlanT는 생리주기를 화분으로 보여주는 앱이에요.<br>아래 코드로 친구를 추가할 수 있어요.',
+    codeLabel: '초대 코드',
+    open: '앱에서 열기',
+    store: 'PlanT 설치하기',
+    note: '앱이 안 열리면 설치한 뒤에<br>친구 탭에서 위 코드를 입력해 주세요.',
+    noCodeTitle: '초대 코드가 없어요',
+    noCodeLead: '링크가 잘린 것 같아요.<br>친구에게 링크를 다시 받아 주세요.'
+  } : {
+    title: 'A friend invited you to PlanT',
+    lead: 'PlanT shows your cycle as a growing plant.<br>Use the code below to add them.',
+    codeLabel: 'Invite code',
+    open: 'Open in the app',
+    store: 'Get PlanT',
+    note: "If the app doesn't open, install it first,<br>then enter the code on the Friends tab.",
+    noCodeTitle: 'No invite code',
+    noCodeLead: 'The link looks incomplete.<br>Ask your friend for a new one.'
+  };
+
+  if (!ko) document.documentElement.lang = 'en';
+
+  var raw = (location.hash || '').slice(1);
+  var code = raw.replace(/[^0-9A-Za-z]/g, '').toUpperCase().slice(0, 8);
+
+  document.getElementById('title').textContent = code ? T.title : T.noCodeTitle;
+  document.getElementById('lead').innerHTML   = code ? T.lead  : T.noCodeLead;
+  document.getElementById('codeLabel').textContent = T.codeLabel;
+  document.getElementById('openBtn').textContent   = T.open;
+  document.getElementById('storeBtn').textContent  = T.store;
+  document.getElementById('note').innerHTML        = T.note;
+
+  if (code) {
+    document.getElementById('code').textContent = code;
+    document.getElementById('openBtn').href =
+      'com.hswtt.plant://add-friend#' + code;
+  } else {
+    document.getElementById('codeBox').className = 'code-box hidden';
+    document.getElementById('openBtn').className = 'btn primary hidden';
+    document.getElementById('note').className    = 'note hidden';
+  }
+})();
+</script>
+</body>
+</html>
