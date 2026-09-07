@@ -5,6 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>PlanT</title>
+<!--
+  초대 링크 폴백 페이지
+  https://hswtt17.github.io/plant-legal/add.html#CODE
+
+  ★ 코드를 손대지 않는다
+    대문자화도 길이 자르기도 하지 않는다. 정규화는 서버만 한다
+    (schema.sql request_friend: upper + translate('OIL','011')).
+    페이지가 8자로 자르면 여덟 자가 아닌 것을 여덟 자로 만들어
+    앱의 FriendLink.codeFrom이 null을 주지 못하게 된다.
+    그러면 "이건 코드가 아니다"를 말할 자리가 사라지고,
+    요청이 가서 서버가 거부하는데 사용자는 이유를 모른다.
+
+  ★ 프래그먼트(#)를 쓴다. 쿼리(?)로 바꾸지 않는다
+    프래그먼트는 서버로 안 간다 — Pages 로그에도, 미리보기
+    크롤러에도 코드가 남지 않는다. 쿼리로 바꾸면 그 성질이 사라진다.
+
+  ☐ 스토어 버튼은 출시일에 더한다 (docs/todo.md A-0)
+    없는 페이지로 보내는 것은 "준비 중"보다 나쁘다
+    (FeatureFlags.hasLegalDocs 주석과 같은 판단).
+
+  ☐ 스킴은 릴리스 패키지(com.hswtt.plant)다.
+    dev 빌드는 com.hswtt.plant.dev라 이 페이지로는 안 열린다.
+    dev 확인은 스킴을 바꿔 따로 한다.
+-->
 <style>
   :root {
     --bg: #FAF6EE;
@@ -28,10 +52,7 @@
     margin: 0 auto;
     padding: 48px 24px 64px;
   }
-  .pot {
-    display: block;
-    margin: 0 auto 32px;
-  }
+  .pot { display: block; margin: 0 auto 32px; }
   h1 {
     font-size: 22px;
     line-height: 1.45;
@@ -54,11 +75,7 @@
     text-align: center;
     background: #fff;
   }
-  .code-label {
-    font-size: 12px;
-    color: var(--muted);
-    margin: 0 0 8px;
-  }
+  .code-label { font-size: 12px; color: var(--muted); margin: 0 0 8px; }
   .code {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: 26px;
@@ -75,16 +92,9 @@
     border-radius: 12px;
     font-size: 16px;
     font-weight: 600;
-    margin-bottom: 12px;
-  }
-  a.primary {
     background: var(--green);
     color: #fff;
-  }
-  a.secondary {
-    background: transparent;
-    color: var(--ink);
-    border: 1px solid var(--line);
+    margin-bottom: 12px;
   }
   .note {
     font-size: 13px;
@@ -114,24 +124,17 @@
   </svg>
 
   <h1 id="title">친구가 PlanT로 초대했어요</h1>
-  <p id="lead">
-    PlanT는 생리주기를 화분으로 보여주는 앱이에요.<br>
-    아래 코드로 친구를 추가할 수 있어요.
-  </p>
+  <p id="lead">PlanT는 생리주기를 화분으로 보여주는 앱이에요.</p>
 
   <div class="code-box" id="codeBox">
     <p class="code-label" id="codeLabel">초대 코드</p>
     <p class="code" id="code">—</p>
   </div>
 
-  <a class="btn primary" id="openBtn" href="#">앱에서 열기</a>
-  <a class="btn secondary" id="storeBtn"
-     href="https://play.google.com/store/apps/details?id=com.hswtt.plant">
-    PlanT 설치하기
-  </a>
+  <a class="btn" id="openBtn" href="#">앱에서 열기</a>
 
   <p class="note" id="note">
-    앱이 안 열리면 설치한 뒤에<br>
+    앱이 안 열리면 PlanT를 설치한 뒤<br>
     친구 탭에서 위 코드를 입력해 주세요.
   </p>
 
@@ -143,43 +146,42 @@
 
   var T = ko ? {
     title: '친구가 PlanT로 초대했어요',
-    lead: 'PlanT는 생리주기를 화분으로 보여주는 앱이에요.<br>아래 코드로 친구를 추가할 수 있어요.',
+    lead: 'PlanT는 생리주기를 화분으로 보여주는 앱이에요.',
     codeLabel: '초대 코드',
     open: '앱에서 열기',
-    store: 'PlanT 설치하기',
-    note: '앱이 안 열리면 설치한 뒤에<br>친구 탭에서 위 코드를 입력해 주세요.',
+    note: '앱이 안 열리면 PlanT를 설치한 뒤<br>친구 탭에서 위 코드를 입력해 주세요.',
     noCodeTitle: '초대 코드가 없어요',
     noCodeLead: '링크가 잘린 것 같아요.<br>친구에게 링크를 다시 받아 주세요.'
   } : {
     title: 'A friend invited you to PlanT',
-    lead: 'PlanT shows your cycle as a growing plant.<br>Use the code below to add them.',
+    lead: 'PlanT shows your cycle as a growing plant.',
     codeLabel: 'Invite code',
     open: 'Open in the app',
-    store: 'Get PlanT',
-    note: "If the app doesn't open, install it first,<br>then enter the code on the Friends tab.",
+    note: "If the app doesn't open, install PlanT first,<br>then enter the code on the Friends tab.",
     noCodeTitle: 'No invite code',
     noCodeLead: 'The link looks incomplete.<br>Ask your friend for a new one.'
   };
 
   if (!ko) document.documentElement.lang = 'en';
 
-  var raw = (location.hash || '').slice(1);
-  var code = raw.replace(/[^0-9A-Za-z]/g, '').toUpperCase().slice(0, 8);
+  // ★ 코드를 손대지 않는다. 있는 그대로 넘긴다.
+  var code = (location.hash || '').slice(1);
 
   document.getElementById('title').textContent = code ? T.title : T.noCodeTitle;
-  document.getElementById('lead').innerHTML   = code ? T.lead  : T.noCodeLead;
+  document.getElementById('lead').innerHTML    = code ? T.lead  : T.noCodeLead;
   document.getElementById('codeLabel').textContent = T.codeLabel;
   document.getElementById('openBtn').textContent   = T.open;
-  document.getElementById('storeBtn').textContent  = T.store;
   document.getElementById('note').innerHTML        = T.note;
 
   if (code) {
-    document.getElementById('code').textContent = code;
+    var shown = code;
+    try { shown = decodeURIComponent(code); } catch (e) { /* 그대로 둔다 */ }
+    document.getElementById('code').textContent = shown;
     document.getElementById('openBtn').href =
       'com.hswtt.plant://add-friend#' + code;
   } else {
     document.getElementById('codeBox').className = 'code-box hidden';
-    document.getElementById('openBtn').className = 'btn primary hidden';
+    document.getElementById('openBtn').className = 'btn hidden';
     document.getElementById('note').className    = 'note hidden';
   }
 })();
